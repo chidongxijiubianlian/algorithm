@@ -11,10 +11,9 @@ public class QuickSort {
 
     public static void main(String[] args)
     {
-        int[] array =new int[]{1,3,5,6,8};
+        int[] array =new int[]{3,4,8,6,1,7};
         QuickSort quickSort = new QuickSort();
-        quickSort.quickSort(array);
-        System.out.println(Arrays.toString(array));
+        quickSort.partition(array,0,array.length-1);
     }
 
     public void quickSort(int[] array)
@@ -38,6 +37,9 @@ public class QuickSort {
         //end array[end]我们作为基准值
         //因此j遍历到end-1
         //自己不用和自己比较
+        //i是最后pivot要插入的位置
+        //从start开始 逐一与pivot进行比较
+        //遇到小的就与自增j做交换 同时增加i的位置索引
         int pivot =array[end];
         int i =start;
         for(int j =start;j<=end-1;j++)

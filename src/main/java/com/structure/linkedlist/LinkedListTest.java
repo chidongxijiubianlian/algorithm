@@ -99,6 +99,7 @@ public class LinkedListTest {
 
 
 
+
     /**
      * 判断链表中是否有环
      * @param head
@@ -134,7 +135,7 @@ public class LinkedListTest {
             listNodeLength++;
             temp = temp.next;
         }
-        //倒数的时候少了一位
+        //倒数的时候少了一位  一共四个数 倒数第二个 是整数第三个
         int removeIndex =listNodeLength-n+1;
         //如果是倒数第一 就不能提前知道了,因此放了个空节点
         ListNode temp2 =new ListNode(99,head);
@@ -150,7 +151,7 @@ public class LinkedListTest {
             temp2 = temp2.next;
             counter++;
         }
-        return null;
+        return temp3.next;
     }
 
 

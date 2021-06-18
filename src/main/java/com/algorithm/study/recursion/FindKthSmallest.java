@@ -7,27 +7,26 @@ import java.util.Arrays;
  * @Description: com.algorithm.study.recursion
  * @Date: Create in 2021-05-19 2342
  */
-public class FindKthLargest {
+public class FindKthSmallest {
 
     public static void main(String[] args) {
-        int[] array =new int[]{4,5,3,6,2};
-        System.out.println(kthLargest(array,1));
+        int[] array =new int[]{1,1,2};
+        System.out.println(KthSmallest(array,2));
         System.out.println(Arrays.toString(array));
 
     }
 
-    public static int kthLargest(int[] arr, int k) {
+    public static int KthSmallest(int[] arr, int k) {
         if (arr == null || arr.length < k) {
             return -1;
         }
 
         int partition = partition(arr, 0, arr.length - 1);
-        while (partition +1 != k) {
-            if (partition + 1 > k) {
-                //求第k大的数 排序后是倒序数组 如果partition+1>k 需要往前找不是往后找了
-                partition = partition(arr, 0, partition - 1);
-            } else {
+        while (partition + 1 != k) {
+            if (partition + 1 < k) {
                 partition = partition(arr, partition + 1, arr.length - 1);
+            } else {
+                partition = partition(arr, 0, partition - 1);
             }
         }
 
@@ -39,12 +38,14 @@ public class FindKthLargest {
 
         int i = p;
         for (int j = p; j < r; j++) {
-            // 这里是区分求第k大和第k小的关键点之一
-            if (arr[j] >= pivot) {
+            // 这里要是 <= ，不然会出现死循环，比如查找数组 [1,1,2] 的第二小的元素
+            if (arr[j] <= pivot) {
+                // 4,1,3,6,2 把小的往前换
                 swap(arr, i, j);
                 i++;
             }
         }
+
         swap(arr, i, r);
 
         return i;
