@@ -15,6 +15,9 @@ public class LinkedListTest {
     //反转链表
     public static void main(String[] args) {
         ListNode listNode = generHeader(new int[]{1, 2, 3, 4, 5});
+        ListNode next =listNode.next;
+        next =null;
+
         ListNode kthFromEnd = getKthFromEnd(listNode, 2);
     }
 

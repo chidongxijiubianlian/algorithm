@@ -20,7 +20,7 @@ public class TreeNodeInt {
 
     public static TreeNodeInt getTree()
     {
-        TreeNodeInt left1 =new TreeNodeInt(2);
+        TreeNodeInt left1 =new TreeNodeInt(1);
         TreeNodeInt left1_left =new TreeNodeInt(4);
         TreeNodeInt left1_right =new TreeNodeInt(5);
         left1.left =left1_left;
@@ -31,7 +31,7 @@ public class TreeNodeInt {
         TreeNodeInt right1_right =new TreeNodeInt(7);
         right1.left =right1_lefth;
         right1.right =right1_right;
-        TreeNodeInt treeNode = new TreeNodeInt(1);
+        TreeNodeInt treeNode = new TreeNodeInt(2);
         treeNode.left =left1;
         treeNode.right =right1;
         return treeNode;

@@ -21,7 +21,6 @@ import java.util.Set;
  */
 public class Test {
     public static void main(String[] args)  {
-
         String dddd ="abcd、";
         System.out.println(dddd.substring(0,dddd.length()-1));
         List<String> list = new ArrayList<String>();

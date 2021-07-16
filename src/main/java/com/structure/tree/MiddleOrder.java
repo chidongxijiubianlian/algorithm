@@ -8,7 +8,7 @@ package com.structure.tree;
 public class MiddleOrder {
 
     public static void main(String[] args) {
-
+        
 
         print(getTree());
     }
